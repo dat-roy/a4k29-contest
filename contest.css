@@ -1,0 +1,214 @@
+/*
+_________________
+        Contest UI
+*/
+
+:root {
+	--contest-container__height: 850px;
+}
+
+.contest-container {
+	display: flex;
+	width: 100%;
+	height:  var(--contest-container__height);
+	flex-direction: row;
+}
+.column {
+	background: white;
+	text-align: center;
+	flex-grow: 0;
+}
+.column-left {
+	width: 400px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--bg-html);
+}
+.column-right {
+	width: calc(100vw - 400px);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--bg-html);
+}
+
+.column-left--top {
+	color: #888;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 50px;
+}
+.column-left--center table {
+  	font-family: arial, sans-serif;
+  	border-collapse: collapse;
+	border-radius: 15px;
+	margin: 15px;
+	max-width: 300px;
+	overflow: hidden;
+	background-color: white;
+	box-shadow: 0 0 0 1px #1e8fff44;
+}
+.column-left--center thead th {
+	color: #fff;
+	background-color: #00b0f0d8;
+	line-height: 3;
+	text-align: center;
+	padding: 0px;
+	font-size: 20px;
+}
+.column-left--center tbody {
+	display:block;
+	height: 450px;
+	overflow:auto;
+}
+.column-left--center thead, 
+.column-left--center tbody tr {
+	display:table;
+	width:100%;
+	table-layout:fixed;
+}
+.column-left--center tbody td {
+  	text-align: center;
+  	padding: 2px;
+  	line-height: 3;
+	border-bottom: 1px solid #f2f2f2;
+	color: #00b0f0d8;
+	font-size: 20px;
+}
+.column-left--center .answer-radio {
+	width: 20px;
+	height: 20px;
+	margin-left: 6px;
+}
+.column-left--bottom {
+	margin-top: 30px;
+}
+.column-left--bottom .btn-disabled {
+	cursor: not-allowed !important;
+    background-color: rgba(184, 184, 184, 0.863) !important;
+}
+.column-left--bottom .btn-submit {
+	padding: 15px 60px;
+	color: white;
+	border: 0px solid black;
+	background-color: #1ECD97;
+	border-radius: 18px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 1px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.column-left--bottom .btn-submit:hover {
+	background-color: #1ecd96c4;
+}
+.column-right--top {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	color: #ffbd09;
+	font-weight: 700;
+	line-height: 48px;
+}
+.column-right--center .showimage {
+	height: 100vh;
+	max-height: 600px;
+	width: 85%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: relative;
+	margin: 15px auto;
+	border-radius: 3px;
+	border: 1px solid rgba(241, 218, 7, 0.733);
+	display: flex;
+	flex-direction: column;
+}
+.column-right--center .showimage .image {
+	width: 100%;
+	height: auto;
+}
+/*
+________________________
+			Popup modal box
+*/
+.body-blackout {
+	position: absolute;
+	z-index: 1010;
+	left: 0;
+	top: 0;
+	width: 100%;
+	min-height: 100%;
+	height: var(--contest-container__height);
+	margin-top: var(--header-height);
+	background-color: rgba(0, 0, 0, 0.65);
+	display: none;
+  }
+.body-blackout.is-blacked-out {
+	display: block;
+}
+
+.popup-trigger {
+	display: inline-block;
+}
+  
+.popup-modal {
+	height: 650px;
+	width: 680px;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 45px;
+	margin-top: var(--header-height);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 300ms ease-in-out;
+	z-index: 1011;
+	border-radius: 30px;
+	font-size: 18px;
+}
+.popup-modal.is--visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+.modal-title {
+	font-size: 24px;
+	line-height: 60px;
+}
+.modal-col-wrap {
+	display: table; 
+    width: 100%; 
+}
+.col {
+	display: table-cell;
+	line-height: 40px;
+}
+.b-color {
+	color: #17a2b8;
+}
+.modal-confirm {
+	margin-top: 20px;
+}
+.confirm-correct,
+.confirm-submit {
+	color: white;
+	padding: 10px 28px;
+	border-radius: 20px;
+	margin: 0 80px;
+	cursor: pointer;	
+	font-size: 20px;
+}
+.confirm-correct {
+	border: 1px solid #f1c40f;
+	background-color: #f1c40f;
+}
+.confirm-submit {
+	border: 1px solid #2ecc71;
+	background-color: #2ecc71;
+}

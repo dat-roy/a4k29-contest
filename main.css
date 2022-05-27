@@ -1,0 +1,238 @@
+/* 
+_________________
+			Root 
+*/
+:root {
+    --bg-html: #ffffff;
+    --text-color: #848484;
+    --header-height: 5rem;
+    --header-shadow: 0px 0px 9px 3px rgba(41,41,41,.1); 
+    --banner-height: 680px;
+    --z-index_header: 10000;
+    --z-index_Mobile_header: 100;
+    --z-index_banner: 99;
+    --z-index_banner__heading: 100;
+    --color-theme: #ff5f5f;
+    --pink: #ff5c62;
+    --my-green: #0ff5a4;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --private-info: #56c6c6;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+* {
+    box-sizing: inherit;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    color: var(--text-color);
+    background-color: var(--bg-html);
+}
+body {
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 400;
+	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    margin: 0;
+}
+a {
+    text-decoration: none !important;
+}
+.link-buttons {
+    color: white;
+}
+.link-buttons:hover {
+    color: white;
+}
+.grid {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 8%;
+}
+.grid__full-width {
+    width: 100%;
+}
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*
+_________________
+		Custom For Scrollbar 
+*/
+::-webkit-scrollbar {	
+	width: 6px;
+  }
+::-webkit-scrollbar-track {		
+	background: #f1f1f1; 
+  }
+  ::-webkit-scrollbar-thumb {
+	background: #888; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+  }
+  
+/* 
+_________________
+		Header
+*/
+.main-header {
+	background-color: #ffffff;
+	width: 1500px;
+	max-width: 100%;
+	margin: 0 auto;
+    padding: 15px 2%;
+	transition: all .2s linear;
+	z-index: 500;
+	height: var(--header-height);
+	top: 0;
+	left: 0;
+	right: 0;
+	box-shadow: rgba(220, 220, 220,0.8) 0px 2px 5px;
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.header__left,
+.header__center,
+.header__right {
+	width: 33.333%;
+	text-align: center;
+}
+.header__left {
+	text-align: left;
+}
+.header__right {
+	text-align: right;
+}
+.logo {
+	height: 38px; 
+	cursor: pointer;
+}
+.links {
+	margin: 0 12px;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #1dadca;
+}
+.links:hover {
+	color: #00d5ff;
+}
+.login-greetings {
+	font-size: 18px;
+	margin: 0 4px;
+	color: #1dadca;
+}
+.btn-groups {
+	color: white;
+	padding: 8px 16px;
+	border-radius: 30px;
+	font-size: 16px;
+	margin-left: 4px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.btn-login {
+	background-color: var(--teal);
+}
+.btn-logout {
+	background-color: #ff5f5f;
+}
+.btn-info {
+	background-color: var(--private-info);
+	margin-right: 8px;
+}
+
+/*
+_________________
+		Footer
+*/
+.main-footer {
+	margin-top: auto;
+	width: 100%;
+	height: 80px;
+	text-align: center;
+}
+.copy-right {
+	color: var(--text-color);
+	font-size: 18px;
+	margin: auto;
+}
+
+  /*.carousel {
+	width: 50vw;
+	height: 900px;
+	border-radius: 3px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  .carousel .controls {
+	opacity: 1;
+	display: flex;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	justify-content: space-between;
+	width: 100%;
+	z-index: 99999;
+	transition: all ease 0.5s;
+  }
+  .carousel .controls .control {
+	margin: 0 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.7);
+	opacity: 0.5;
+	transition: ease 0.3s;
+	cursor: pointer;
+  }
+  .carousel .controls .control:hover {
+	opacity: 1;
+  }
+  .carousel .slides {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	display: flex;
+	width: 100%;
+	transition: 1s ease-in-out all;
+  }
+  .carousel .slides .slide {
+	height: auto;
+	width: 100%;
+  }*/
+
+ 
